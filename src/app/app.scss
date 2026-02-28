@@ -1,0 +1,35 @@
+.app-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 20px;
+  background: #1e1e2e;
+  border-bottom: 1px solid #313244;
+
+  .mode-label {
+    font-size: 13px;
+    color: #cdd6f4;
+    font-family: monospace;
+  }
+
+  .toggle-btn {
+    padding: 4px 14px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    background: #a6e3a1;
+    color: #1e1e2e;
+    transition: background 0.2s;
+
+    &.mock {
+      background: #f38ba8;
+    }
+
+    &:hover {
+      opacity: 0.85;
+    }
+  }
+}
