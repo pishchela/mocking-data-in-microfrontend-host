@@ -5,7 +5,11 @@ import { MOCK_MODE_KEY } from './core/mock-mode.util';
 
 export const worker: SetupWorker = setupWorker();
 
+const registeredRemotes = new Set<string>();
+
 export async function registerRemoteMockHandlers(remoteName: string): Promise<void> {
+    if (registeredRemotes.has(remoteName)) return;
+    registeredRemotes.add(remoteName);
     try {
         const module = await import(`${remoteName}/mockHandlers`);
         const handlers: RequestHandler[] = module?.registerMockHandlers();
